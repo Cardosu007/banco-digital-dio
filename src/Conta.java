@@ -8,7 +8,7 @@ public abstract class Conta implements IConta {
     protected int agencia;
     protected int numero;
     protected double saldo;
-    protected Scanner scanner;
+
 
     public Conta() {
         this.agencia = Conta.AGENCIA_PADRAO;
@@ -27,11 +27,4 @@ public abstract class Conta implements IConta {
         return saldo;
     }
 
-    public Scanner getScanner() {
-        return scanner;
-    }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
-    }
 }

@@ -6,7 +6,6 @@ public class Cliente {
     private String nome;
     private String email;
     private String cpf;
-    private String senha;
     private long telefone;
     private LocalDate dataNascimento;
     public Scanner scanner;
@@ -26,10 +25,6 @@ public class Cliente {
 
     public void cpfCliente(){
         System.out.println("CPF: ");
-    }
-
-    public void senhaCliente(){
-        System.out.println("Senha: ");
     }
 
     public void telefoneCliente(){
@@ -52,15 +47,21 @@ public class Cliente {
         System.out.println("Nome Completo: ");
         nome = scanner.nextLine();
 
-        
+        System.out.println("Email: ");
+        email = scanner.nextLine();
+
+        System.out.println("CPF: ");
+        cpf = scanner.nextLine();
+
+        System.out.println("Telefone: ");
+        telefone = scanner.nextLong();
+
+        System.out.println("Data de Nascimento (YYYY-MM-DD): ");
+        String dataNascimentoStr = scanner.next();
+        dataNascimento = LocalDate.parse(dataNascimentoStr);
+
 
         }
-
-
-    }
-
-
-
 
 
     public String getNome() {
@@ -87,14 +88,6 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     public long getTelefone() {
         return telefone;
     }
@@ -110,5 +103,6 @@ public class Cliente {
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+
 
 }
