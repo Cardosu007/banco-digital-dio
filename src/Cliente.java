@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Cliente {
@@ -6,9 +5,17 @@ public class Cliente {
     private String nome;
     private String email;
     private String cpf;
-    private long telefone;
-    private LocalDate dataNascimento;
+    private int telefone;
+    private int dataNascimento;
     public Scanner scanner;
+
+    public Cliente(String nome, String email, String cpf, int telefone, int dataNascimento) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.dataNascimento = dataNascimento;
+    }
 
     public Cliente(){
         this.scanner = new Scanner(System.in);
@@ -54,14 +61,13 @@ public class Cliente {
         cpf = scanner.nextLine();
 
         System.out.println("Telefone: ");
-        telefone = scanner.nextLong();
+        telefone = scanner.nextInt();
 
-        System.out.println("Data de Nascimento (YYYY-MM-DD): ");
-        String dataNascimentoStr = scanner.next();
-        dataNascimento = LocalDate.parse(dataNascimentoStr);
+        System.out.println("Data de Nascimento (YYYYMMDD): ");
+        dataNascimento = scanner.nextInt();
 
 
-        }
+    }
 
 
     public String getNome() {
@@ -92,17 +98,27 @@ public class Cliente {
         return telefone;
     }
 
-    public void setTelefone(long telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
 
-    public LocalDate getDataNascimento() {
+    public int getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(int dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
+    @Override
+    public String toString() {
+        return "- CLIENTE BANCO DIGITAL DIO - \n" +
+                "Nome: " + nome + "\n" +
+                "Email: " + email + "\n" +
+                "CPF: " + cpf + "\n" +
+                "Telefone: " + telefone + "\n" +
+                "Data de Nascimento: " + dataNascimento + "\n" +
+                "-----------------------------";
 
+    }
 }

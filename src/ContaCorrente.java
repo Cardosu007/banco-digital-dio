@@ -4,6 +4,9 @@ public class ContaCorrente extends Conta {
 
     private Scanner scanner;
 
+    public ContaCorrente() {
+        this.scanner = new Scanner(System.in);
+    }
 
     @Override
     public void sacar(double valor) {
